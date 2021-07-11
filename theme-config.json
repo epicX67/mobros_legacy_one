@@ -1,0 +1,74 @@
+{
+  "channels": [{
+    "name": "theme_fan_speed_cpu",
+    "sources": "all",
+    "hardwaretype": "Mainboard",
+    "sensortype": "Fan",
+    "fallbackToFirstValue": true,
+    "extract": [{
+      "byLabel": [{
+        "includes": "(Chassis|chassis)"
+      }, {
+        "includes": "cpu"
+      }, {
+        "includes": "Cpu"
+      }
+      ]
+    }]
+  },{
+    "name": "theme_fan_speed_gpu",
+    "sources": "all",
+    "hardwaretype": "Graphics",
+    "sensortype": "Fan",
+    "fallbackToFirstValue": true,
+    "extract": [{
+      "byLabel": [ {
+        "includes": "GPU"
+      }, {
+        "includes": "gpu"
+      }, {
+        "includes": "Gpu"
+      }
+      ]
+    }]
+  },{
+    "name": "theme_vram",
+    "sources": "all",
+    "hardwaretype": "Graphics",
+    "sensortype": "Data",
+    "fallbackToFirstValue": false,
+    "extract": [{
+      "byLabel": [ {
+        "includes": "Memory Used"
+      },{
+        "includes": "Memory Usage"
+      }
+      ]
+    }]
+  },{
+    "name": "theme_vram_percentage",
+    "sources": "all",
+    "hardwaretype": "Graphics",
+    "sensortype": "Usage",
+    "fallbackToFirstValue": false,
+    "extract": [{
+      "byLabel": [ {
+        "includes": "Memory",
+        "excludes": "Controller"
+      }
+      ]
+    }]
+  },{
+    "name": "theme_vram_total",
+    "sources": "all",
+    "hardwaretype": "Graphics",
+    "sensortype": "Data",
+    "fallbackToFirstValue": false,
+    "extract": [{
+      "byLabel": [ {
+        "includes": "Memory Total"
+      }
+      ]
+    }]
+  }]
+}

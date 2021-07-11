@@ -1,0 +1,443 @@
+@charset "UTF-8";
+:root {
+  --bg: #25262a;
+  --sbg: #2b2c30;
+  --txt: #dadada;
+  --cyan: #63ffd0;
+  --blue: #6398ff;
+  --red: #ff6363;
+  --orange: #ff9b63;
+  --lime: #8bff63;
+  --yellow: #ffef63;
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+.cyanBG {
+  background: var(--cyan);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.blueBG {
+  background: var(--blue);
+}
+
+.red {
+  color: var(--red);
+}
+
+.redBG {
+  background: var(--red);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.orangeBG {
+  background: var(--orange);
+}
+
+.lime {
+  color: var(--lime);
+}
+
+.limeBG {
+  background: var(--lime);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.yellowBG {
+  background: var(--yellow);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  padding: 2%;
+}
+
+header {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 5.5rem;
+  background: -webkit-gradient(linear, left top, right top, from(var(--red)), to(var(--orange)));
+  background: linear-gradient(to right, var(--red), var(--orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header span {
+  font-weight: 200;
+}
+
+.container {
+  width: 100%;
+  min-height: 400px;
+  margin: 4rem 0rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25rem)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 25rem);
+  gap: 5rem;
+}
+
+.container .card {
+  position: relative;
+  background: var(--sbg);
+  width: 25rem;
+  height: 25rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-animation: come 500ms ease 200ms 1 forwards;
+          animation: come 500ms ease 200ms 1 forwards;
+}
+
+@-webkit-keyframes come {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes come {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.container .card .type {
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+  background: red;
+  border-radius: 999px;
+  border: 8px solid var(--sbg);
+  background: var(--bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  padding: 0rem 1.5rem;
+  position: absolute;
+  top: -2.5rem;
+  right: 2rem;
+}
+
+.container .card .type i {
+  font-size: 1.8rem;
+}
+
+.container .card .type p {
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.container .card .pill {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 4rem;
+  background: var(--bg);
+  border-radius: 999px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.2rem;
+  padding: 0rem 2rem 0rem 1rem;
+}
+
+.container .card .pill i {
+  font-size: 2.2rem;
+}
+
+.container .card .pill .pill-txt {
+  font-family: "Poppins";
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.container .card .pill .pill-txt span {
+  margin-left: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--txt);
+}
+
+.container .card .load {
+  font-size: 7.5rem;
+  font-family: "productSans";
+  font-weight: 900;
+}
+
+.container .card .load span {
+  font-size: 2.5rem;
+  color: var(--txt);
+}
+
+.container .card .pillDown {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 4rem;
+  background: var(--bg);
+  border-radius: 999px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  padding: 0rem 1rem 0rem 2rem;
+}
+
+.container .card .pillDown .pillDown-txt {
+  font-family: "productSans";
+  font-weight: 900;
+  font-size: 2rem;
+  height: 2.5rem;
+}
+
+.container .card .pillDown .pillDown-txt span {
+  margin-left: 0.4rem;
+  font-size: 1.2rem;
+  color: var(--txt);
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.container .card .pillDown img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.container .card .pillDown i {
+  font-size: 2.2rem;
+}
+
+.hideSettings {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.settings {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100vh;
+  background: var(--sbg);
+  padding: 1rem;
+  border-left: 10px solid var(--bg);
+  font-family: "Poppins";
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
+}
+
+.settings .openSettings {
+  position: absolute;
+  bottom: 0;
+  left: -8rem;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  z-index: 99;
+  background: none;
+  border: none;
+  color: var(--txt);
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 400ms ease;
+  transition: -webkit-transform 400ms ease;
+  transition: transform 400ms ease;
+  transition: transform 400ms ease, -webkit-transform 400ms ease;
+}
+
+.settings .openSettings i {
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
+}
+
+.settings .openSettings:hover {
+  -webkit-transform: scale(1.2) rotate(180deg);
+          transform: scale(1.2) rotate(180deg);
+}
+
+.settings .openSettings:hover i {
+  color: var(--blue);
+}
+
+.settings .settings-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings .settings-head button {
+  padding: 0.5rem 2rem;
+  border-radius: 999px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--red);
+  border: 2px solid var(--red);
+  background: transparent;
+  -webkit-transition: 300ms color, 300ms background;
+  transition: 300ms color, 300ms background;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.settings .settings-head button:hover {
+  background: var(--red);
+  color: white;
+}
+
+.settings .sContainer {
+  overflow-y: auto;
+  height: calc(100vh - 6rem);
+  margin-top: 1rem;
+}
+
+.settings .sContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.settings .sContainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.226);
+  border-radius: 999px;
+  size: 2px;
+}
+
+.settings h2 {
+  margin-top: 3rem;
+}
+
+.settings h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.settings label {
+  font-size: 1.5rem;
+}
+
+.settings input {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
+}
+
+.settings .colorPicker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.settings .colorPicker button {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.settings .colorPicker .active::after {
+  position: absolute;
+  content: "✔";
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 2rem;
+  inset: 0;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  background: rgba(0, 0, 0, 0.459);
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
