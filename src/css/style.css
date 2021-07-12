@@ -76,6 +76,7 @@ header {
   font-family: "Poppins";
   font-weight: 600;
   font-size: 12vmin;
+  padding-bottom: 6vmin;
   background: -webkit-gradient(linear, left top, right top, from(var(--red)), to(var(--orange)));
   background: linear-gradient(to right, var(--red), var(--orange));
   -webkit-background-clip: text;
@@ -87,22 +88,25 @@ header span {
   font-weight: 200;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
   width: 100%;
-  min-height: 400px;
-  margin: 8vmin 0rem;
+  margin: 2vmin 0rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (45vmin)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 45vmin);
+  -ms-grid-columns: (46vmin)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 46vmin);
   gap: 7vmin;
 }
 
 .container .card {
   position: relative;
   background: var(--sbg);
-  width: 45vmin;
-  height: 45vmin;
+  width: 46vmin;
+  height: 42vmin;
   border-radius: 0.5rem;
   padding: 3vmin;
   opacity: 0;
@@ -168,7 +172,7 @@ header span {
 }
 
 .container .card .type i {
-  font-size: 4vmin;
+  font-size: 3.8vmin;
 }
 
 .container .card .type p {
@@ -204,7 +208,7 @@ header span {
 
 .container .card .pill .pill-txt {
   font-family: "Poppins";
-  font-size: 4.5vmin;
+  font-size: 4vmin;
   font-weight: 300;
 }
 
@@ -245,7 +249,7 @@ header span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
+  gap: 1.8vmin;
   padding: 4vmin 2vmin;
   padding-left: 4vmin;
 }
@@ -254,7 +258,7 @@ header span {
   font-family: "productSans";
   font-weight: 900;
   font-size: 4vmin;
-  height: 5.3vmin;
+  height: 5.1vmin;
 }
 
 .container .card .pillDown .pillDown-txt span {
@@ -388,16 +392,19 @@ header span {
 }
 
 .settings h2 {
-  margin-top: 3rem;
+  font-size: 6vmin;
+  margin-top: 8vmin;
+  margin-bottom: 3vmin;
 }
 
 .settings h3 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-size: 5vmin;
+  margin-top: 8vmin;
+  margin-bottom: 5vmin;
 }
 
 .settings label {
-  font-size: 1.5rem;
+  font-size: 5.5vmin;
 }
 
 .settings input {
@@ -421,8 +428,8 @@ header span {
 
 .settings .colorPicker button {
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 20vmin;
+  height: 20vmin;
   border: none;
   border-radius: 10px;
 }
@@ -432,12 +439,72 @@ header span {
   content: "✔";
   font-family: "Poppins";
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 6vmin;
   inset: 0;
   display: -ms-grid;
   display: grid;
   place-content: center;
   background: rgba(0, 0, 0, 0.459);
   color: white;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    margin: 1rem;
+    margin-bottom: 0rem;
+    width: calc(100% - 2rem);
+  }
+  .container {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    margin-top: 1rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    gap: 7vmin;
+  }
+  .container .card {
+    height: 45vmin;
+    width: 100%;
+    padding: 1rem;
+  }
+  .container .card .type {
+    border: 1vmin solid var(--sbg);
+    gap: 0.5rem;
+    padding: 1.2vmin 3vmin;
+    position: absolute;
+    top: -4vmin;
+    right: 3vmin;
+  }
+  .container .card .type i {
+    font-size: 4.5vmin;
+  }
+  .container .card .type p {
+    font-size: 2.8vmin;
+    font-family: "Poppins";
+    font-weight: 600;
+  }
+  .settings {
+    position: absolute;
+    width: 90vw;
+    height: auto;
+  }
+  .settings .openSettings {
+    display: none;
+  }
+  .settings .settings-head {
+    font-size: 4.2vmin;
+  }
+  .settings .settings-head button {
+    display: none;
+  }
+  .settings .sContainer {
+    height: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
