@@ -166,7 +166,7 @@
         </tr>
     </table>
 
-    <header>One <span>Ui</span></header>
+    <header id="header" class="hide">One <span>Ui</span></header>
     <div id="main" class="container">
         <div style="display: none;" id="cpu" class="card">
             <div class="type">
@@ -251,6 +251,9 @@
 
 
         <div class="sContainer">
+            <input onchange="showhideHeader();" type="checkbox" name="show_header" id="show_header">
+            <label for="show_header">Show Header</label>
+
             <h2>CPU</h2>
             <input onchange="set_visibility('show_cpu');update();" type="checkbox" name="show_cpu" id="show_cpu">
             <label for="show_cpu">Show CPU</label>

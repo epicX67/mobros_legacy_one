@@ -18,7 +18,22 @@ function updateColor(str, colorStr) {
 }
 window.updateColor = updateColor;
 
+function showhideHeader() {
+  const checked = document.getElementById("show_header").checked;
+  if (checked) {
+    document.getElementById("header").classList.remove("hide");
+  } else {
+    document.getElementById("header").classList.add("hide");
+  }
+  localStorage.setItem("show_header", JSON.stringify(checked));
+}
+window.showhideHeader = showhideHeader;
+
 function update() {
+  const showHeader = localStorage.getItem("show_header")
+    ? JSON.parse(localStorage.getItem("show_header"))
+    : true;
+
   const showCPU = localStorage.getItem("show_cpu")
     ? JSON.parse(localStorage.getItem("show_cpu"))
     : true;
@@ -36,6 +51,13 @@ function update() {
   const ram_color = localStorage.getItem("ram_color");
   const gpu_color = localStorage.getItem("gpu_color");
   const vram_color = localStorage.getItem("vram_color");
+
+  if (showHeader) {
+    document.getElementById("header").classList.remove("hide");
+  } else {
+    document.getElementById("header").classList.add("hide");
+  }
+  document.getElementById("show_header").checked = showHeader;
 
   updateColor("cpu", cpu_color ? cpu_color : "blue");
   document.getElementById("show_cpu").checked = showCPU;
