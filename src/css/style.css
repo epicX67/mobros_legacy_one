@@ -75,7 +75,7 @@ body {
 header {
   font-family: "Poppins";
   font-weight: 600;
-  font-size: 5.5rem;
+  font-size: 12vmin;
   background: -webkit-gradient(linear, left top, right top, from(var(--red)), to(var(--orange)));
   background: linear-gradient(to right, var(--red), var(--orange));
   -webkit-background-clip: text;
@@ -90,21 +90,21 @@ header span {
 .container {
   width: 100%;
   min-height: 400px;
-  margin: 4rem 0rem;
+  margin: 8vmin 0rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (25rem)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 25rem);
-  gap: 5rem;
+  -ms-grid-columns: (45vmin)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 45vmin);
+  gap: 8vmin;
 }
 
 .container .card {
   position: relative;
   background: var(--sbg);
-  width: 25rem;
-  height: 25rem;
+  width: 45vmin;
+  height: 45vmin;
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 3vmin;
   opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -147,11 +147,9 @@ header span {
 }
 
 .container .card .type {
-  min-width: 4.5rem;
-  min-height: 4.5rem;
   background: red;
   border-radius: 999px;
-  border: 8px solid var(--sbg);
+  border: 1vmin solid var(--sbg);
   background: var(--bg);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,17 +161,18 @@ header span {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0.5rem;
-  padding: 0rem 1.5rem;
+  padding: 1.2vmin 3vmin;
   position: absolute;
-  top: -2.5rem;
-  right: 2rem;
+  top: -4vmin;
+  right: 3vmin;
 }
 
 .container .card .type i {
-  font-size: 1.8rem;
+  font-size: 4vmin;
 }
 
 .container .card .type p {
+  font-size: 2vmin;
   font-family: "Poppins";
   font-weight: 600;
 }
@@ -182,7 +181,7 @@ header span {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 4rem;
+  height: 4vmin;
   background: var(--bg);
   border-radius: 999px;
   display: -webkit-box;
@@ -196,34 +195,34 @@ header span {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.2rem;
-  padding: 0rem 2rem 0rem 1rem;
+  padding: 4vmin 2vmin;
 }
 
 .container .card .pill i {
-  font-size: 2.2rem;
+  font-size: 4vmin;
 }
 
 .container .card .pill .pill-txt {
   font-family: "Poppins";
-  font-size: 1.8rem;
+  font-size: 4.5vmin;
   font-weight: 300;
 }
 
 .container .card .pill .pill-txt span {
-  margin-left: 0.2rem;
-  font-size: 1.5rem;
+  margin-left: 1vmin;
+  font-size: 3vmin;
   font-weight: 200;
   color: var(--txt);
 }
 
 .container .card .load {
-  font-size: 7.5rem;
+  font-size: 14vmin;
   font-family: "productSans";
   font-weight: 900;
 }
 
 .container .card .load span {
-  font-size: 2.5rem;
+  font-size: 4vmin;
   color: var(--txt);
 }
 
@@ -231,7 +230,7 @@ header span {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 4rem;
+  height: 4vmin;
   background: var(--bg);
   border-radius: 999px;
   display: -webkit-box;
@@ -247,19 +246,20 @@ header span {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
-  padding: 0rem 1rem 0rem 2rem;
+  padding: 4vmin 2vmin;
+  padding-left: 4vmin;
 }
 
 .container .card .pillDown .pillDown-txt {
   font-family: "productSans";
   font-weight: 900;
-  font-size: 2rem;
-  height: 2.5rem;
+  font-size: 4vmin;
+  height: 5.3vmin;
 }
 
 .container .card .pillDown .pillDown-txt span {
-  margin-left: 0.4rem;
-  font-size: 1.2rem;
+  margin-left: 1vmin;
+  font-size: 2.5vmin;
   color: var(--txt);
 }
 
@@ -278,12 +278,12 @@ header span {
 }
 
 .container .card .pillDown img {
-  width: 3rem;
-  height: 3rem;
+  width: 6vmin;
+  height: 6vmin;
 }
 
 .container .card .pillDown i {
-  font-size: 2.2rem;
+  font-size: 4.5vmin;
 }
 
 .hideSettings {

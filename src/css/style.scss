@@ -74,7 +74,7 @@ body {
 header {
   font-family: "Poppins";
   font-weight: 600;
-  font-size: 5.5rem;
+  font-size: 12vmin;
   span {
     font-weight: 200;
   }
@@ -85,15 +85,15 @@ header {
 }
 
 .container {
-  $cardSize: 25rem;
+  $cardSize: 45vmin;
   width: 100%;
   min-height: 400px;
-  margin: 4rem 0rem;
+  margin: 8vmin 0rem;
 
   // Grid
   display: grid;
   grid-template-columns: repeat(auto-fill, $cardSize);
-  gap: 5rem;
+  gap: 8vmin;
 
   .card {
     position: relative;
@@ -101,7 +101,7 @@ header {
     width: $cardSize;
     height: $cardSize;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 3vmin;
     opacity: 0;
 
     display: flex;
@@ -122,28 +122,27 @@ header {
     animation: come 500ms ease 200ms 1 forwards;
 
     .type {
-      min-width: 4.5rem;
-      min-height: 4.5rem;
       background: red;
       border-radius: 999px;
-      border: 8px solid var(--sbg);
+      border: 1vmin solid var(--sbg);
       background: var(--bg);
 
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0rem 1.5rem;
+      padding: 1.2vmin 3vmin;
 
       position: absolute;
-      top: -2.5rem;
-      right: 2rem;
+      top: -4vmin;
+      right: 3vmin;
 
       i {
-        font-size: 1.8rem;
+        font-size: 4vmin;
       }
 
       p {
+        font-size: 2vmin;
         font-family: "Poppins";
         font-weight: 600;
       }
@@ -152,28 +151,28 @@ header {
     .pill {
       //width: 10rem;
       width: fit-content;
-      height: 4rem;
+      height: 4vmin;
       background: var(--bg);
       border-radius: 999px;
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 0.2rem;
-      padding: 0rem 2rem 0rem 1rem;
+      padding: 4vmin 2vmin;
 
       i {
-        font-size: 2.2rem;
+        font-size: 4vmin;
       }
 
       .pill-txt {
         font-family: "Poppins";
-        font-size: 1.8rem;
+        font-size: 4.5vmin;
         //outline: 1px solid white;
         font-weight: 300;
 
         span {
-          margin-left: 0.2rem;
-          font-size: 1.5rem;
+          margin-left: 1vmin;
+          font-size: 3vmin;
           font-weight: 200;
           color: var(--txt);
         }
@@ -181,12 +180,12 @@ header {
     }
 
     .load {
-      font-size: 7.5rem;
+      font-size: 14vmin;
       font-family: "productSans";
       font-weight: 900;
 
       span {
-        font-size: 2.5rem;
+        font-size: 4vmin;
         color: var(--txt);
       }
     }
@@ -194,7 +193,7 @@ header {
     .pillDown {
       //width: 10rem;
       width: fit-content;
-      height: 4rem;
+      height: 4vmin;
       background: var(--bg);
       border-radius: 999px;
       display: flex;
@@ -202,18 +201,19 @@ header {
       flex-direction: row;
       align-items: center;
       gap: 1rem;
-      padding: 0rem 1rem 0rem 2rem;
+      padding: 4vmin 2vmin;
+      padding-left: 4vmin;
 
       .pillDown-txt {
         font-family: "productSans";
         font-weight: 900;
-        font-size: 2rem;
+        font-size: 4vmin;
         //outline: 1px solid white;
-        height: 2.5rem;
+        height: 5.3vmin;
 
         span {
-          margin-left: 0.4rem;
-          font-size: 1.2rem;
+          margin-left: 1vmin;
+          font-size: 2.5vmin;
           color: var(--txt);
         }
       }
@@ -225,12 +225,12 @@ header {
       }
 
       img {
-        width: 3rem;
-        height: 3rem;
+        width: 6vmin;
+        height: 6vmin;
       }
 
       i {
-        font-size: 2.2rem;
+        font-size: 4.5vmin;
       }
     }
   }
