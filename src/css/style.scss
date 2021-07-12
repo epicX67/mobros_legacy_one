@@ -93,7 +93,7 @@ header {
   // Grid
   display: grid;
   grid-template-columns: repeat(auto-fill, $cardSize);
-  gap: 8vmin;
+  gap: 7vmin;
 
   .card {
     position: relative;

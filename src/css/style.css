@@ -95,7 +95,7 @@ header span {
   display: grid;
   -ms-grid-columns: (45vmin)[auto-fill];
       grid-template-columns: repeat(auto-fill, 45vmin);
-  gap: 8vmin;
+  gap: 7vmin;
 }
 
 .container .card {
