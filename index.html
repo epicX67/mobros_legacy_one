@@ -200,15 +200,32 @@
             </div>
         </div>
 
+        <div style="display: none;" id="cpu_clock" class="card">
+            <div class="type">
+                <i id="cpu_clock_speed_ico" class="ri-pulse-fill blue"></i>
+                <p>CPU clock</p>
+            </div>
+
+            <div class="pill" style="opacity: .3;">
+                <i class="ri-temp-cold-fill"></i>
+                <div id="cpu_clock_dummy1" class="pill-txt blue">-<span>°c</span></div>
+            </div>
+            <div id="cpu_curr_clock" class="load loadClock blue">0</div>
+            <div class="pillDown" style="opacity: .3;">
+                <div id="cpu_clock_dummy2" class="pillDown-txt blue">-<span>MHZ</span></div>
+                <i class="ri-dashboard-2-line"></i>
+            </div>
+        </div>
+
         <div style="display: none;" id="ram" class="card">
             <div class="type">
                 <i id="mem_ico" class="ri-database-fill lime"></i>
                 <p>RAM</p>
             </div>
 
-            <div class="pill">
+            <div class="pill" style="opacity: .3;">
                 <i class="ri-temp-cold-fill"></i>
-                <div class="pill-txt lime"><span>°c</span></div>
+                <div class="pill-txt lime">-<span>°c</span></div>
             </div>
             <div id="mem_load" class="load lime">83<span>%</span></div>
             <div class="pillDown">
@@ -235,6 +252,23 @@
             </div>
         </div>
 
+        <div style="display: none;" id="gpu_clock" class="card">
+            <div class="type">
+                <i id="gpu_clock_speed_ico" class="ri-pulse-fill blue"></i>
+                <p>GPU clock</p>
+            </div>
+
+            <div class="pill" style="opacity: .3;">
+                <i class="ri-temp-cold-fill"></i>
+                <div id="gpu_clock_dummy1" class="pill-txt blue">-<span>°c</span></div>
+            </div>
+            <div id="gpu_curr_clock" class="load loadClock blue">0</div>
+            <div class="pillDown" style="opacity: .3;">
+                <div id="gpu_clock_dummy2" class="pillDown-txt blue">-<span>MHZ</span></div>
+                <i class="ri-dashboard-2-line"></i>
+            </div>
+        </div>
+
 
         <div style="display: none;" id="vram" class="card">
             <div class="type">
@@ -242,9 +276,9 @@
                 <p>VRAM</p>
             </div>
 
-            <div class="pill">
+            <div class="pill" style="opacity: .3;">
                 <i class="ri-temp-cold-fill"></i>
-                <div class="pill-txt yellow"><span>°c</span></div>
+                <div class="pill-txt yellow">-<span>°c</span></div>
             </div>
             <div id="vram_load" class="load yellow"><span>%</span></div>
             <div class="pillDown">
@@ -286,6 +320,28 @@
             </div>
 
 
+            <h2>CPU Clock Speed</h2>
+            <input onchange="set_visibility('show_cpu_clock');update();" type="checkbox" name="show_cpu_clock"
+                id="show_cpu_clock">
+            <label for="show_cpu_clock">Show CPU Clock Speed</label>
+
+            <h3>Color</h3>
+            <div class="colorPicker">
+                <button onclick="updateColor('cpu_clock', 'red');update();" id="cpu_clock_color_red"
+                    class="redBG"></button>
+                <button onclick="updateColor('cpu_clock', 'blue');update();" id="cpu_clock_color_blue"
+                    class="blueBG"></button>
+                <button onclick="updateColor('cpu_clock', 'cyan');update();" id="cpu_clock_color_cyan"
+                    class="cyanBG"></button>
+                <button onclick="updateColor('cpu_clock', 'yellow');update();" id="cpu_clock_color_yellow"
+                    class="yellowBG"></button>
+                <button onclick="updateColor('cpu_clock', 'orange');update();" id="cpu_clock_color_orange"
+                    class="orangeBG"></button>
+                <button onclick="updateColor('cpu_clock', 'lime');update();" id="cpu_clock_color_lime"
+                    class="limeBG"></button>
+            </div>
+
+
 
 
 
@@ -321,6 +377,28 @@
                 <button onclick="updateColor('gpu', 'orange');update();" id="gpu_color_orange"
                     class="orangeBG"></button>
                 <button onclick="updateColor('gpu', 'lime');update();" id="gpu_color_lime" class="limeBG"></button>
+            </div>
+
+
+            <h2>GPU Clock Speed</h2>
+            <input onchange="set_visibility('show_gpu_clock');update();" type="checkbox" name="show_gpu_clock"
+                id="show_gpu_clock">
+            <label for="show_gpu_clock">Show GPU Clock Speed</label>
+
+            <h3>Color</h3>
+            <div class="colorPicker">
+                <button onclick="updateColor('gpu_clock', 'red');update();" id="gpu_clock_color_red"
+                    class="redBG"></button>
+                <button onclick="updateColor('gpu_clock', 'blue');update();" id="gpu_clock_color_blue"
+                    class="blueBG"></button>
+                <button onclick="updateColor('gpu_clock', 'cyan');update();" id="gpu_clock_color_cyan"
+                    class="cyanBG"></button>
+                <button onclick="updateColor('gpu_clock', 'yellow');update();" id="gpu_clock_color_yellow"
+                    class="yellowBG"></button>
+                <button onclick="updateColor('gpu_clock', 'orange');update();" id="gpu_clock_color_orange"
+                    class="orangeBG"></button>
+                <button onclick="updateColor('gpu_clock', 'lime');update();" id="gpu_clock_color_lime"
+                    class="limeBG"></button>
             </div>
 
 

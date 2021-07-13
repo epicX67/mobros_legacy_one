@@ -230,6 +230,14 @@ header span {
   color: var(--txt);
 }
 
+.container .card .loadClock {
+  font-size: 12vmin;
+}
+
+.container .card .loadClock span {
+  font-size: 3vmin;
+}
+
 .container .card .pillDown {
   width: -webkit-fit-content;
   width: -moz-fit-content;

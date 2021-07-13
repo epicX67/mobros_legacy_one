@@ -37,19 +37,27 @@ function update() {
   const showCPU = localStorage.getItem("show_cpu")
     ? JSON.parse(localStorage.getItem("show_cpu"))
     : true;
+  const showCPUClock = localStorage.getItem("show_cpu_clock")
+    ? JSON.parse(localStorage.getItem("show_cpu_clock"))
+    : true;
   const showRAM = localStorage.getItem("show_ram")
     ? JSON.parse(localStorage.getItem("show_ram"))
     : true;
   const showGPU = localStorage.getItem("show_gpu")
     ? JSON.parse(localStorage.getItem("show_gpu"))
     : true;
+  const showGPUClock = localStorage.getItem("show_gpu_clock")
+    ? JSON.parse(localStorage.getItem("show_gpu_clock"))
+    : true;
   const showVRAM = localStorage.getItem("show_vram")
     ? JSON.parse(localStorage.getItem("show_vram"))
     : true;
 
   const cpu_color = localStorage.getItem("cpu_color");
+  const cpu_clock_color = localStorage.getItem("cpu_clock_color");
   const ram_color = localStorage.getItem("ram_color");
   const gpu_color = localStorage.getItem("gpu_color");
+  const gpu_clock_color = localStorage.getItem("gpu_clock_color");
   const vram_color = localStorage.getItem("vram_color");
 
   if (showHeader) {
@@ -79,6 +87,27 @@ function update() {
     document.getElementById("cpu").style["display"] = "none";
   }
 
+  updateColor("cpu_clock", cpu_clock_color ? cpu_clock_color : "blue");
+  document.getElementById("show_cpu_clock").checked = showCPUClock;
+  if (showCPUClock) {
+    const color = cpu_clock_color ? cpu_clock_color : "blue";
+    document
+      .getElementById("cpu_clock_speed_ico")
+      .setAttribute("class", `ri-pulse-fill ${color}`);
+    document
+      .getElementById("cpu_clock_dummy1")
+      .setAttribute("class", `pill-txt ${color}`);
+    document
+      .getElementById("cpu_curr_clock")
+      .setAttribute("class", `load loadClock ${color}`);
+    document
+      .getElementById("cpu_clock_dummy2")
+      .setAttribute("class", `pillDown-txt ${color}`);
+    document.getElementById("cpu_clock").style["display"] = "flex";
+  } else {
+    document.getElementById("cpu_clock").style["display"] = "none";
+  }
+
   updateColor("gpu", gpu_color ? gpu_color : "orange");
   document.getElementById("show_gpu").checked = showGPU;
   if (showGPU) {
@@ -96,6 +125,27 @@ function update() {
     document.getElementById("gpu").style["display"] = "flex";
   } else {
     document.getElementById("gpu").style["display"] = "none";
+  }
+
+  updateColor("gpu_clock", gpu_clock_color ? gpu_clock_color : "orange");
+  document.getElementById("show_gpu_clock").checked = showGPUClock;
+  if (showGPUClock) {
+    const color = gpu_clock_color ? gpu_clock_color : "blue";
+    document
+      .getElementById("gpu_clock_speed_ico")
+      .setAttribute("class", `ri-pulse-fill ${color}`);
+    document
+      .getElementById("gpu_clock_dummy1")
+      .setAttribute("class", `pill-txt ${color}`);
+    document
+      .getElementById("gpu_curr_clock")
+      .setAttribute("class", `load loadClock ${color}`);
+    document
+      .getElementById("gpu_clock_dummy2")
+      .setAttribute("class", `pillDown-txt ${color}`);
+    document.getElementById("gpu_clock").style["display"] = "flex";
+  } else {
+    document.getElementById("gpu_clock").style["display"] = "none";
   }
 
   updateColor("ram", ram_color ? ram_color : "lime");
@@ -163,7 +213,6 @@ function onCPU_Fan() {
   const speed = 100 - (Hardware.CPU.fan.current.value / 3000) * 100;
   const ms = parseInt(speed >= 100 ? 0 : speed * 7);
 
-
   document.getElementById(
     "cpu_fan"
   ).innerHTML = `${Hardware.CPU.fan.current.value}<span>${Hardware.CPU.fan.unit.value}</span>`;
@@ -172,7 +221,11 @@ function onCPU_Fan() {
     "cpu_fan_anima"
   ).style = `animation: spin ${ms}ms linear infinite;`;
 }
-function onCPU_Clock() {}
+function onCPU_Clock() {
+  document.getElementById("cpu_curr_clock").innerHTML = `${
+    Hardware.CPU.clock.current.value
+  }<span> ${Hardware.CPU.clock.unit.value.toLocaleUpperCase()}</span>`;
+}
 function onGPU_Temp() {
   document.getElementById(
     "gpu_temp"
@@ -195,7 +248,11 @@ function onGPU_Fan() {
     "gpu_fan_anima"
   ).style = `animation: spin ${ms}ms linear infinite;`;
 }
-function onGPU_Clock() {}
+function onGPU_Clock() {
+  document.getElementById("gpu_curr_clock").innerHTML = `${
+    Hardware.GPU.clock.current.value
+  }<span> ${Hardware.GPU.clock.unit.value.toLocaleUpperCase()}</span>`;
+}
 function onMemory_Usage() {
   document.getElementById(
     "mem_load"
