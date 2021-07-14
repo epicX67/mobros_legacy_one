@@ -322,19 +322,20 @@ header span {
 .settings .openSettings {
   position: absolute;
   bottom: 0;
-  left: -8rem;
+  left: -5.1rem;
   margin: 1rem;
   padding: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   z-index: 99;
   background: none;
   border: none;
   color: var(--txt);
   cursor: pointer;
-  -webkit-transition: -webkit-transform 400ms ease;
-  transition: -webkit-transform 400ms ease;
-  transition: transform 400ms ease;
-  transition: transform 400ms ease, -webkit-transform 400ms ease;
+  -webkit-transition: opacity 400ms, -webkit-transform 400ms ease;
+  transition: opacity 400ms, -webkit-transform 400ms ease;
+  transition: transform 400ms ease, opacity 400ms;
+  transition: transform 400ms ease, opacity 400ms, -webkit-transform 400ms ease;
+  opacity: 0.3;
 }
 
 .settings .openSettings i {
@@ -343,6 +344,7 @@ header span {
 }
 
 .settings .openSettings:hover {
+  opacity: 1;
   -webkit-transform: scale(1.2) rotate(180deg);
           transform: scale(1.2) rotate(180deg);
 }

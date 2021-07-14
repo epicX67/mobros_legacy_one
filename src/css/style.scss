@@ -267,22 +267,24 @@ header {
   .openSettings {
     position: absolute;
     bottom: 0;
-    left: -8rem;
+    left: -5.1rem;
     margin: 1rem;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     z-index: 99;
     background: none;
     border: none;
     color: var(--txt);
     cursor: pointer;
-    transition: transform 400ms ease;
+    transition: transform 400ms ease, opacity 400ms;
+    opacity: 0.3;
 
     i {
       transition: color 400ms;
     }
 
     &:hover {
+      opacity: 1;
       transform: scale(1.2) rotate(180deg);
       i {
         color: var(--blue);
