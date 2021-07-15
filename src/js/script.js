@@ -43,6 +43,9 @@ function update() {
   const showRAM = localStorage.getItem("show_ram")
     ? JSON.parse(localStorage.getItem("show_ram"))
     : true;
+  const showFPS = localStorage.getItem("show_fps")
+    ? JSON.parse(localStorage.getItem("show_fps"))
+    : true;
   const showGPU = localStorage.getItem("show_gpu")
     ? JSON.parse(localStorage.getItem("show_gpu"))
     : true;
@@ -56,6 +59,7 @@ function update() {
   const cpu_color = localStorage.getItem("cpu_color");
   const cpu_clock_color = localStorage.getItem("cpu_clock_color");
   const ram_color = localStorage.getItem("ram_color");
+  const fps_color = localStorage.getItem("fps_color");
   const gpu_color = localStorage.getItem("gpu_color");
   const gpu_clock_color = localStorage.getItem("gpu_clock_color");
   const vram_color = localStorage.getItem("vram_color");
@@ -162,6 +166,22 @@ function update() {
     document.getElementById("ram").style["display"] = "flex";
   } else {
     document.getElementById("ram").style["display"] = "none";
+  }
+
+  updateColor("fps", fps_color ? fps_color : "yellow");
+  document.getElementById("show_fps").checked = showFPS;
+  if (showFPS) {
+    const color = fps_color ? fps_color : "yellow";
+    document
+      .getElementById("fps_ico")
+      .setAttribute("class", `ri-computer-fill ${color}`);
+    document.getElementById("fps_load").setAttribute("class", `load ${color}`);
+    document
+      .getElementById("fps_max")
+      .setAttribute("class", `pillDown-txt ${color}`);
+    document.getElementById("fps").style["display"] = "flex";
+  } else {
+    document.getElementById("fps").style["display"] = "none";
   }
 
   updateColor("vram", vram_color ? vram_color : "yellow");
