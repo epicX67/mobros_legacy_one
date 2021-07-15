@@ -293,6 +293,7 @@ function onVRam_Used() {
     "vram_used"
   ).innerHTML = `${Hardware.GPU.vram.used.current.value}<span> ${Hardware.GPU.vram.used.unit.value}</span>`;
 }
+function onMisc_Fps() {}
 
 // References
 const Hardware = {
@@ -529,6 +530,30 @@ const Hardware = {
       max: {
         value: 0,
         ref: document.getElementById("mem_used_max"),
+      },
+    },
+  },
+  Misc: {
+    name: {
+      value: "Misc",
+      ref: null,
+    },
+    fps: {
+      unit: {
+        value: "FPS",
+        ref: document.getElementById("misc_fps_unit"),
+      },
+      min: {
+        value: 0,
+        ref: document.getElementById("misc_fps_min"),
+      },
+      current: {
+        value: 0,
+        ref: document.getElementById("misc_fps_curr"),
+      },
+      max: {
+        value: 0,
+        ref: document.getElementById("misc_fps_max"),
       },
     },
   },
@@ -775,6 +800,19 @@ MobroSDK.init().then(() => {
           Math.round(max)
         );
         onVRam_Usage();
+      }
+    }
+  });
+
+  MobroSDK.addChannelListener("theme_FPS", (data) => {
+    if (data.payload) {
+      const { unit, value, min, max } = data.payload;
+      if (value) {
+        Hardware.update(Hardware.GPU.vram.usage.unit, unit);
+        Hardware.set(Hardware.Misc.fps.min, min + unit, min);
+        Hardware.set(Hardware.Misc.fps.curr, curr + unit, curr);
+        Hardware.set(Hardware.Misc.fps.max, max + unit, max);
+        onMisc_Fps();
       }
     }
   });

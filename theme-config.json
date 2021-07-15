@@ -106,5 +106,19 @@
       }
       ]
     }]
-  }]
+  },
+  {
+    "name": "theme_FPS",
+    "sources": "all",
+    "hardwaretype": "Misc",
+    "sensortype": "Misc",
+    "fallbackToFirstValue": false,
+    "extract": [{
+      "byLabel": [ {
+        "includes": "RTSS"
+      }
+      ]
+    }]
+ }
+]
 }
