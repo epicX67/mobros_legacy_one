@@ -163,21 +163,22 @@ header {
       flex-direction: row;
       align-items: center;
       gap: 0.2rem;
-      padding: 4vmin 2vmin;
+      padding: 4.5vmin 4vmin;
+      padding-left: 3vmin;
 
       i {
-        font-size: 4vmin;
+        font-size: 5.3vmin;
       }
 
       .pill-txt {
         font-family: "Poppins";
-        font-size: 4vmin;
+        font-size: 5.3vmin;
         //outline: 1px solid white;
         font-weight: 300;
 
         span {
-          margin-left: 1vmin;
-          font-size: 3vmin;
+          margin-left: 0.5vmin;
+          font-size: 3.6vmin;
           font-weight: 200;
           color: var(--txt);
         }
