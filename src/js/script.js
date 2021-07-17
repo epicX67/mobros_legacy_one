@@ -228,6 +228,13 @@ function onCPU_Temp() {
   document.getElementById(
     "cpu_temp"
   ).innerHTML = `${Hardware.CPU.temperature.current.value}<span> ${Hardware.CPU.temperature.unit.value}</span>`;
+
+  const c = document.getElementById("cpu");
+  if (Hardware.CPU.temperature.current.value > 90) {
+    c.classList.add("warning");
+  } else {
+    c.classList.remove("warning");
+  }
 }
 function onCPU_Fan() {
   const speed = 100 - (Hardware.CPU.fan.current.value / 3000) * 100;
@@ -250,6 +257,13 @@ function onGPU_Temp() {
   document.getElementById(
     "gpu_temp"
   ).innerHTML = `${Hardware.GPU.temperature.current.value}<span> ${Hardware.GPU.temperature.unit.value}</span>`;
+
+  const g = document.getElementById("gpu");
+  if (Hardware.GPU.temperature.current.value > 90) {
+    g.classList.add("warning");
+  } else {
+    g.classList.remove("warning");
+  }
 }
 function onGPU_Usage() {
   document.getElementById(

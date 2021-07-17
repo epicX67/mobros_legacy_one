@@ -59,6 +59,45 @@
   background: var(--yellow);
 }
 
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.warning {
+  position: relative;
+}
+
+.warning::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: radial-gradient(#ff002225, #ff00228e);
+  border-radius: 10px;
+  z-index: 0;
+  -webkit-animation: blink 3000ms ease 0ms infinite;
+          animation: blink 3000ms ease 0ms infinite;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -151,7 +190,6 @@ header span {
 }
 
 .container .card .type {
-  background: red;
   border-radius: 999px;
   border: 1vmin solid var(--sbg);
   background: var(--bg);
@@ -166,6 +204,7 @@ header span {
           justify-content: center;
   gap: 0.5rem;
   padding: 1.2vmin 3vmin;
+  z-index: 2;
   position: absolute;
   top: -4vmin;
   right: 3vmin;
@@ -182,6 +221,7 @@ header span {
 }
 
 .container .card .pill {
+  z-index: 2;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -221,6 +261,7 @@ header span {
 }
 
 .container .card .load {
+  z-index: 2;
   font-size: 14vmin;
   font-family: "productSans";
   font-weight: 900;
@@ -240,6 +281,7 @@ header span {
 }
 
 .container .card .pillDown {
+  z-index: 2;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
