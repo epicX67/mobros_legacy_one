@@ -231,6 +231,19 @@ header {
         font-size: 3vmin;
       }
     }
+    @keyframes breathe {
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.3;
+      }
+    }
+    .clockanima {
+      opacity: 0.3;
+      animation: breathe 1000ms infinite;
+    }
 
     .pillDown {
       z-index: 2;

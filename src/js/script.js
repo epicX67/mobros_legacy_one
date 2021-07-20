@@ -1,3 +1,33 @@
+setInterval(showTime, 1000);
+function showTime() {
+  let time = new Date();
+  let hour = time.getHours();
+  let min = time.getMinutes();
+  am_pm = "AM";
+
+  if (hour > 12) {
+    hour -= 12;
+    am_pm = "PM";
+  }
+  if (hour == 0) {
+    hr = 12;
+    am_pm = "AM";
+  }
+
+  //hour = hour < 10 ? "0" + hour : hour;
+  min = min < 10 ? "0" + min : min;
+
+  let currentTime = hour + ":" + min;
+
+  // document.getElementById("clock")
+  // 		.innerHTML = currentTime;
+  //console.log(currentTime);
+  document.getElementById(
+    "time_curr"
+  ).innerHTML = `${hour.toString()}<strong class="clockanima">:</strong>${min} <span>${am_pm}</span>`;
+}
+showTime();
+
 function set_visibility(id) {
   localStorage.setItem(id, JSON.stringify(document.getElementById(id).checked));
 }
@@ -34,6 +64,9 @@ function update() {
     ? JSON.parse(localStorage.getItem("show_header"))
     : true;
 
+  const showTIME = localStorage.getItem("show_time")
+    ? JSON.parse(localStorage.getItem("show_time"))
+    : true;
   const showCPU = localStorage.getItem("show_cpu")
     ? JSON.parse(localStorage.getItem("show_cpu"))
     : true;
@@ -56,6 +89,7 @@ function update() {
     ? JSON.parse(localStorage.getItem("show_vram"))
     : true;
 
+  const time_color = localStorage.getItem("time_color");
   const cpu_color = localStorage.getItem("cpu_color");
   const cpu_clock_color = localStorage.getItem("cpu_clock_color");
   const ram_color = localStorage.getItem("ram_color");
@@ -70,6 +104,27 @@ function update() {
     document.getElementById("header").classList.add("hide");
   }
   document.getElementById("show_header").checked = showHeader;
+
+  updateColor("time", time_color ? time_color : "lime");
+  document.getElementById("show_time").checked = showTIME;
+  if (showTIME) {
+    const color = time_color ? time_color : "lime";
+    document
+      .getElementById("time_id1")
+      .setAttribute("class", `ri-time-line ${color}`);
+    document
+      .getElementById("time_id2")
+      .setAttribute("class", `pill-txt ${color}`);
+    document
+      .getElementById("time_curr")
+      .setAttribute("class", `load loadClock ${color}`);
+    document
+      .getElementById("time_id3")
+      .setAttribute("class", `pillDown-txt ${color}`);
+    document.getElementById("time").style["display"] = "flex";
+  } else {
+    document.getElementById("time").style["display"] = "none";
+  }
 
   updateColor("cpu", cpu_color ? cpu_color : "blue");
   document.getElementById("show_cpu").checked = showCPU;

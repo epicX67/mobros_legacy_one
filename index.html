@@ -195,6 +195,23 @@
 
     <header id="header" class="hide">One <span>Ui</span></header>
     <div id="main" class="container">
+        <div style="display: none;" id="time" class="card">
+            <div class="type">
+                <i id="time_id1" class="ri-time-line lime"></i>
+                <p>TIME</p>
+            </div>
+
+            <div class="pill" style="opacity: .3;">
+                <i class="ri-temp-cold-fill"></i>
+                <div id="time_id2" class="pill-txt lime"><span>°c</span></div>
+            </div>
+            <div id="time_curr" class="load loadClock lime">6:01<span>N/A</span></div>
+            <div class="pillDown" style="opacity: .3;">
+                <div id="time_id3" class="pillDown-txt lime">-<span>N/A</span></div>
+                <i class="ri-dashboard-2-line"></i>
+            </div>
+        </div>
+
         <div style="display: none;" id="cpu" class="card">
             <div class="type">
                 <i id="cpu_ico" class="ri-cpu-fill blue"></i>
@@ -331,6 +348,22 @@
         <div class="sContainer">
             <input onchange="showhideHeader();" type="checkbox" name="show_header" id="show_header">
             <label for="show_header">Show Header</label>
+
+            <h2>Time</h2>
+            <input onchange="set_visibility('show_time');update();" type="checkbox" name="show_time" id="show_time">
+            <label for="show_time">Show Time</label>
+
+            <h3>Color</h3>
+            <div class="colorPicker">
+                <button onclick="updateColor('time', 'red');update();" id="time_color_red" class="redBG"></button>
+                <button onclick="updateColor('time', 'blue');update();" id="time_color_blue" class="blueBG"></button>
+                <button onclick="updateColor('time', 'cyan');update();" id="time_color_cyan" class="cyanBG"></button>
+                <button onclick="updateColor('time', 'yellow');update();" id="time_color_yellow"
+                    class="yellowBG"></button>
+                <button onclick="updateColor('time', 'orange');update();" id="time_color_orange"
+                    class="orangeBG"></button>
+                <button onclick="updateColor('time', 'lime');update();" id="time_color_lime" class="limeBG"></button>
+            </div>
 
             <h2>CPU</h2>
             <input onchange="set_visibility('show_cpu');update();" type="checkbox" name="show_cpu" id="show_cpu">

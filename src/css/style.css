@@ -280,6 +280,30 @@ header span {
   font-size: 3vmin;
 }
 
+@-webkit-keyframes breathe {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes breathe {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.container .card .clockanima {
+  opacity: 0.3;
+  -webkit-animation: breathe 1000ms infinite;
+          animation: breathe 1000ms infinite;
+}
+
 .container .card .pillDown {
   z-index: 2;
   width: -webkit-fit-content;
